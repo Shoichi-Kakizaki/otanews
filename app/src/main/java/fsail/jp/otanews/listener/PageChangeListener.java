@@ -1,6 +1,8 @@
 package fsail.jp.otanews.listener;
 
+import android.graphics.Point;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -18,12 +20,16 @@ public class PageChangeListener implements ViewPager.OnPageChangeListener {
     // インジケータ
     private View mIndicator;
     private int mIndicatorOffset;
+    // 画面サイズ
+    private Point size;
 
-    public PageChangeListener(HorizontalScrollView mTrackScroller, ViewGroup mTrack, View mIndicator, int mIndicatorOffset){
+    public PageChangeListener(Point size, HorizontalScrollView mTrackScroller, ViewGroup mTrack, View mIndicator, int mIndicatorOffset){
         this.mTrackScroller = mTrackScroller;
         this.mTrack = mTrack;
         this.mIndicator = mIndicator;
         this.mIndicatorOffset = mIndicatorOffset;
+        this.size = size;
+
     }
 
     @Override
@@ -49,8 +55,7 @@ public class PageChangeListener implements ViewPager.OnPageChangeListener {
         // 現在の位置のタブのView
         final View view = mTrack.getChildAt(position);
         // 現在の位置の次のタブのView、現在の位置が最後のタブのときはnull
-        final View view2 = position == (mTrack.getChildCount() - 1) ? null
-                : mTrack.getChildAt(position + 1);
+        final View view2 = position == (mTrack.getChildCount() - 1) ? null : mTrack.getChildAt(position + 1);
 
         // 現在の位置のタブの左端座標取得
         int left = view.getLeft();
@@ -59,6 +64,7 @@ public class PageChangeListener implements ViewPager.OnPageChangeListener {
         int width = view.getWidth();
         // 現在の位置の次のタブの横幅
         int width2 = view2 == null ? width : view2.getWidth();
+
 
         // インディケータの幅
         // width2 × スライドした割合 ＋ (width × スライドした割合 - 1)
@@ -76,6 +82,6 @@ public class PageChangeListener implements ViewPager.OnPageChangeListener {
         mIndicator.setLayoutParams(layoutParams);
 
         // インディケータが画面に入るように、タブの領域をスクロール
-        mTrackScroller.scrollTo(indicatorLeft - mIndicatorOffset, 0);
+        mTrackScroller.scrollTo(indicatorLeft - (size.x - width)/2 , 0);
     }
 }

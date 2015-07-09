@@ -3,13 +3,16 @@ package fsail.jp.otanews;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.HorizontalScrollView;
 import android.widget.TextView;
 
@@ -37,8 +40,15 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //画面サイズ取得
+        WindowManager wm = (WindowManager)getSystemService(WINDOW_SERVICE);
+        Display disp = wm.getDefaultDisplay();
+        Point size = new Point();
+        disp.getSize(size);
+
         // INDICATOR_OFFSET・・・ タブのindicatorの幅
         final float density = getResources().getDisplayMetrics().density;
+        //Androidの機種に対応したタブスクロール幅に設定
         mIndicatorOffset = (int) (INDICATOR_OFFSET * density);
 
         // Viewを取得
@@ -51,7 +61,7 @@ public class MainActivity extends Activity {
         PagerAdapter adapter = new ViewPagerAdapter(getFragmentManager());
         final ViewPager pager = (ViewPager) findViewById(R.id.pager);
         pager.setAdapter(adapter);
-        pager.setOnPageChangeListener(new PageChangeListener(mTrackScroller, mTrack, mIndicator, mIndicatorOffset));
+        pager.setOnPageChangeListener(new PageChangeListener(size, mTrackScroller, mTrack, mIndicator, mIndicatorOffset));
 
         // タブをコンテナに追加
         LayoutInflater inflater = LayoutInflater.from(this);
