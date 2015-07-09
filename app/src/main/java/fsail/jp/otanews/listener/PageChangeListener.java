@@ -9,7 +9,7 @@ import android.widget.HorizontalScrollView;
 /**
  * Created by kakizaki_shoichi on 2015/07/09.
  */
-class PageChangeListener implements ViewPager.OnPageChangeListener {
+public class PageChangeListener implements ViewPager.OnPageChangeListener {
     private int mScrollingState = ViewPager.SCROLL_STATE_IDLE;
     // タブ部分のスクローラ
     private HorizontalScrollView mTrackScroller;

@@ -11,11 +11,18 @@ import fsail.jp.otanews.R;
 
 
 public class ContentFragment extends Fragment {
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_content, container, false);
+
+    public static ContentFragment getInstance(int position) {
+        ContentFragment f = new ContentFragment();
+        Bundle args = new Bundle();
+        args.putInt("position", position);
+        f.setArguments(args);
+        return f;
     }
 
-
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_content, container, false);
+    }
 }
