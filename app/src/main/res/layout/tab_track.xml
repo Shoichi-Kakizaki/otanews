@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/track_scroller"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#f0e68c"
+    android:fadingEdgeLength="0dp"
+    android:scrollbars="none" >
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:id="@+id/track"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/tab_height"
+            android:divider="?android:attr/dividerVertical"
+            android:dividerPadding="@dimen/tab_divider_padding"
+            android:orientation="horizontal"
+            android:showDividers="middle" />
+
+        <View
+            android:id="@+id/indicator"
+            android:layout_width="@dimen/indicator_width"
+            android:layout_height="@dimen/indicator_height"
+            android:layout_gravity="bottom"
+            android:background="#aa33b5e5" />
+    </FrameLayout>
+
+</HorizontalScrollView>
