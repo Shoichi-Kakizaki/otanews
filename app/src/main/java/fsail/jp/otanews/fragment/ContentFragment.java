@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -55,6 +56,7 @@ public class ContentFragment extends Fragment {
         super.onCreate(savedInstanceState);
         CommunicationManager qiita = new CommunicationManager();
         qiita.getQiita(mainActivity);
+        Log.d("通信いくよ", "びびびびび");
     }
 
     // eventbusの通知を受け取り、必要なデータをインスタント変数に格納する
@@ -64,7 +66,22 @@ public class ContentFragment extends Fragment {
         showList();
     }
 
-    public void showList(){
+    @Override
+    public void onResume() {
+        super.onResume();
+        eventBus.register(this);
+
+        // 戻った際にリストを再描画する
+        showList();
+    }
+
+    @Override
+    public void onPause() {
+        eventBus.unregister(this);
+        super.onPause();
+    }
+
+    private void showList(){
         // リストビューに表示するためのデータを設定
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(mainActivity, android.R.layout.simple_list_item_1);
         for (String title: mTitles) {
@@ -82,20 +99,9 @@ public class ContentFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
     }
 
 
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        eventBus.register(this);
-    }
 
-    @Override
-    public void onPause() {
-        eventBus.unregister(this);
-        super.onPause();
-    }
 }

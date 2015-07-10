@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -96,6 +97,7 @@ public class MainActivity extends Activity {
 
         @Override
         public Fragment getItem(int position) {
+            Log.d("Fragmentの生成", String.valueOf(position));
             return ContentFragment.getInstance(position);
         }
 
