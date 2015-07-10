@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 
 import fsail.jp.otanews.R;
 
-
 public class ContentFragment extends Fragment {
 
     public static ContentFragment getInstance(int position) {
@@ -21,8 +20,7 @@ public class ContentFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_content, container, false);
     }
 }

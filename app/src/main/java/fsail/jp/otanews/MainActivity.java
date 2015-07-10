@@ -20,6 +20,7 @@ import fsail.jp.otanews.listener.PageChangeListener;
 import fsail.jp.otanews.fragment.ContentFragment;
 
 
+
 public class MainActivity extends Activity {
 
     // インジケータのオフセット
