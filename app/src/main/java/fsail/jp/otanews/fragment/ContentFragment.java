@@ -5,7 +5,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,8 +15,9 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 import de.greenrobot.event.EventBus;
-import fsail.jp.otanews.MainActivity;
+import fsail.jp.otanews.activity.MainActivity;
 import fsail.jp.otanews.R;
+import fsail.jp.otanews.activity.WebViewActivity;
 import fsail.jp.otanews.model.AsyncContent;
 import fsail.jp.otanews.model.CommunicationManager;
 
@@ -73,15 +73,15 @@ public class ContentFragment extends Fragment {
         ListView qiitaList = (ListView)v.findViewById(R.id.ContentView);
         qiitaList.setAdapter(adapter);
 
-//        /* webViewに遷移する */
-//        qiitaList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
-//                intent.putExtra("uri", mUris.get(position));
-//                startActivity(intent);
-//            }
-//        });
+        /* webViewに遷移する */
+        qiitaList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(mainActivity, WebViewActivity.class);
+                intent.putExtra("uri", mUris.get(position));
+                startActivity(intent);
+            }
+        });
 
     }
 

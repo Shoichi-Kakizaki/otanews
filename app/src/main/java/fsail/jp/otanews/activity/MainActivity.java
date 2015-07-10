@@ -1,4 +1,4 @@
-package fsail.jp.otanews;
+package fsail.jp.otanews.activity;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -16,6 +16,7 @@ import android.view.WindowManager;
 import android.widget.HorizontalScrollView;
 import android.widget.TextView;
 
+import fsail.jp.otanews.R;
 import fsail.jp.otanews.listener.PageChangeListener;
 import fsail.jp.otanews.fragment.ContentFragment;
 import fsail.jp.otanews.model.CommunicationManager;
