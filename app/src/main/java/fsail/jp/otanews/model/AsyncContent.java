@@ -19,6 +19,8 @@ public class AsyncContent {
     public AsyncContent(boolean success, JSONArray response) {
         mSuccess = success;
         createStatus(response);
+        String sample = "hoge";
+
     }
 
     public boolean isSuccess(){

@@ -15,4 +15,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+    <!-- Fragment-->
+    <fragment class="fsail.jp.otanews.fragment.ContentFragment"
+        android:id="@+id/content_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
 </RelativeLayout>

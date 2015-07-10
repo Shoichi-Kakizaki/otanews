@@ -18,7 +18,7 @@ import android.widget.TextView;
 
 import fsail.jp.otanews.listener.PageChangeListener;
 import fsail.jp.otanews.fragment.ContentFragment;
-
+import fsail.jp.otanews.model.CommunicationManager;
 
 
 public class MainActivity extends Activity {
@@ -79,7 +79,8 @@ public class MainActivity extends Activity {
                 }
             });
             mTrack.addView(tv);
-        }
+        };
+
     }
 
 
