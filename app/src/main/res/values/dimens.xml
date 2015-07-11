@@ -3,10 +3,18 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
+    <dimen name="header_padding_left">15dp</dimen>
+    <dimen name="header_padding_right">15dp</dimen>
+
+
     <!--tab_track.xml-->
     <dimen name="tab_height">48dp</dimen>
     <dimen name="tab_padding">24dp</dimen>
     <dimen name="tab_divider_padding">12dp</dimen>
     <dimen name="indicator_width">60dp</dimen>
     <dimen name="indicator_height">8dp</dimen>
+
+    <!--webview-ヘッダー-->
+    <dimen name="setting_header_height">64dp</dimen>
+
 </resources>

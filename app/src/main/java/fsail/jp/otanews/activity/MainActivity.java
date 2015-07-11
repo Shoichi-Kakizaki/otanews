@@ -20,7 +20,7 @@ import android.widget.TextView;
 import fsail.jp.otanews.R;
 import fsail.jp.otanews.listener.PageChangeListener;
 import fsail.jp.otanews.fragment.ContentFragment;
-import fsail.jp.otanews.model.CommunicationManager;
+import fsail.jp.otanews.model.TabItem;
 
 
 public class MainActivity extends Activity {
@@ -85,11 +85,10 @@ public class MainActivity extends Activity {
 
     }
 
-
     private static class ViewPagerAdapter extends FragmentPagerAdapter {
-        // タブの項目
-        private static final String[] sTabs = { "Mercury", "Venus", "Earth", "Mars",
-                "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto" };
+
+        TabItem tab = new TabItem();
+
 
         public ViewPagerAdapter(FragmentManager fragmentManager) {
             super(fragmentManager);
@@ -103,12 +102,12 @@ public class MainActivity extends Activity {
 
         @Override
         public int getCount() {
-            return sTabs.length;
+            return tab.getTabList().length;
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
-            return sTabs[position];
+            return tab.getTabList()[position];
         }
     }
 }

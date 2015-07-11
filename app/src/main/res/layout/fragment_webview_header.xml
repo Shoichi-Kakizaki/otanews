@@ -1,0 +1,22 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/setting_header_height"
+    android:layout_marginLeft="@dimen/header_padding_left"
+    android:layout_marginRight="@dimen/header_padding_right"
+    tools:context="fsail.jp.otanews.fragment.WebViewHeaderFragment">
+
+
+    <!--仮の戻るボタン-->
+    <TextView
+        android:id="@+id/webViewBackbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="← 戻る"
+        android:textSize="15dp"
+        android:gravity="center"
+        />
+
+
+</LinearLayout>
