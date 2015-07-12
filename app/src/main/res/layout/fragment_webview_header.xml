@@ -5,8 +5,8 @@
     android:layout_height="@dimen/setting_header_height"
     android:layout_marginLeft="@dimen/header_padding_left"
     android:layout_marginRight="@dimen/header_padding_right"
-    tools:context="fsail.jp.otanews.fragment.WebViewHeaderFragment">
 
+    tools:context="fsail.jp.otanews.fragment.WebViewHeaderFragment">
 
     <!--仮の戻るボタン-->
     <TextView
@@ -17,6 +17,5 @@
         android:textSize="15dp"
         android:gravity="center"
         />
-
 
 </LinearLayout>
