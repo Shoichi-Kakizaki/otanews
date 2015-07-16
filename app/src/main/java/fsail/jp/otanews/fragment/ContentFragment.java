@@ -46,7 +46,7 @@ public class ContentFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.fragment_content, container, false);
         return v;
     }
@@ -95,7 +95,7 @@ public class ContentFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(mainActivity, WebViewActivity.class);
-                intent.putExtra("uri", mUris.get(position));
+                intent.putExtra("uri", mUris.get(position + 1));
                 startActivity(intent);
             }
         });

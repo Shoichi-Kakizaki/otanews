@@ -3,6 +3,7 @@ package fsail.jp.otanews.activity;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.support.v13.app.FragmentPagerAdapter;
@@ -83,6 +84,16 @@ public class MainActivity extends Activity {
             mTrack.addView(tv);
         };
 
+    }
+
+    public void settingTransition(){
+        Intent intent = new Intent(MainActivity.this, ConfigActivity.class);
+        startActivity(intent);
+    }
+
+    public void laterTransition(){
+        Intent intent = new Intent(MainActivity.this, LaterActivity.class);
+        startActivity(intent);
     }
 
     private static class ViewPagerAdapter extends FragmentPagerAdapter {

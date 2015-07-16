@@ -6,6 +6,15 @@
     android:orientation="vertical"
     tools:context=".MainActivity" >
 
+    <!-- ヘッダ::Fragment -->
+    <fragment class="fsail.jp.otanews.fragment.TopHeaderFragment"
+        android:id="@+id/top_header_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/setting_header_height"
+        android:layout_marginLeft="@dimen/header_padding_left"
+        android:layout_marginRight="@dimen/header_padding_right"
+        tools:layout="@layout/fragment_top_header" />
+
     <!-- tab部分 -->
     <include layout="@layout/tab_track" />
 
