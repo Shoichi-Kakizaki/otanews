@@ -86,13 +86,23 @@ public class MainActivity extends Activity {
 
     }
 
+    // 設定に遷移する
     public void settingTransition(){
         Intent intent = new Intent(MainActivity.this, ConfigActivity.class);
         startActivity(intent);
     }
 
+    // 後読みに遷移する
     public void laterTransition(){
         Intent intent = new Intent(MainActivity.this, LaterActivity.class);
+        startActivity(intent);
+    }
+
+
+    // コンテンツのWebViewに遷移する
+    public void webViewTransition(String uri) {
+        Intent intent = new Intent(this, WebViewActivity.class);
+        intent.putExtra("uri", uri);
         startActivity(intent);
     }
 
