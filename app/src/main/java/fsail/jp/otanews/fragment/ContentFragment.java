@@ -2,7 +2,6 @@ package fsail.jp.otanews.fragment;
 
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.util.Log;
@@ -18,9 +17,8 @@ import java.util.ArrayList;
 import de.greenrobot.event.EventBus;
 import fsail.jp.otanews.activity.MainActivity;
 import fsail.jp.otanews.R;
-import fsail.jp.otanews.activity.WebViewActivity;
-import fsail.jp.otanews.model.AsyncContent;
-import fsail.jp.otanews.model.CommunicationManager;
+import fsail.jp.otanews.async.AsyncContent;
+import fsail.jp.otanews.api.CommunicationManager;
 
 public class ContentFragment extends Fragment {
 

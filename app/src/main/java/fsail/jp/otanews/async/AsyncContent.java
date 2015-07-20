@@ -1,4 +1,4 @@
-package fsail.jp.otanews.model;
+package fsail.jp.otanews.async;
 
 import org.json.JSONArray;
 import org.json.JSONException;

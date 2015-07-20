@@ -1,4 +1,4 @@
-package fsail.jp.otanews.model;
+package fsail.jp.otanews.api;
 
 import android.content.Context;
 import android.util.Log;
@@ -9,6 +9,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
 
 import de.greenrobot.event.EventBus;
+import fsail.jp.otanews.async.AsyncContent;
 
 /**
  * Created by kakizaki_shoichi on 2015/07/10.
@@ -24,6 +25,13 @@ public class CommunicationManager {
         eventBus = EventBus.getDefault();
     }
 
+
+       
+
+
+    //=======================================================
+    ///コンテンツの取得
+    //=======================================================
     public void getQiita(Context context) {
         // Volley でリクエスト
         mQueue = Volley.newRequestQueue(context);
@@ -40,5 +48,7 @@ public class CommunicationManager {
                 }, null));
 
     }
+
+
 
 }

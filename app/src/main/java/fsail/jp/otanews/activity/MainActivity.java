@@ -17,10 +17,11 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.HorizontalScrollView;
 import android.widget.TextView;
-
 import fsail.jp.otanews.R;
+import fsail.jp.otanews.api.DataManager;
 import fsail.jp.otanews.listener.PageChangeListener;
 import fsail.jp.otanews.fragment.ContentFragment;
+import fsail.jp.otanews.model.Login;
 import fsail.jp.otanews.model.TabItem;
 
 
@@ -86,6 +87,15 @@ public class MainActivity extends Activity {
 
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        //初回ログイン時はユーザ登録を行う
+        if(!DataManager.getInstance().isUuid()){
+            Login.getAdId(this);
+        }
+    }
+
     // 設定に遷移する
     public void settingTransition(){
         Intent intent = new Intent(MainActivity.this, ConfigActivity.class);
@@ -107,9 +117,7 @@ public class MainActivity extends Activity {
     }
 
     private static class ViewPagerAdapter extends FragmentPagerAdapter {
-
         TabItem tab = new TabItem();
-
 
         public ViewPagerAdapter(FragmentManager fragmentManager) {
             super(fragmentManager);
