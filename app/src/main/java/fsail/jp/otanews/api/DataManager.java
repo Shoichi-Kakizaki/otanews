@@ -68,4 +68,7 @@ public class DataManager {
         editor.commit();
     }
 
+
+    /*バージョン情報の取得*/
+
 }

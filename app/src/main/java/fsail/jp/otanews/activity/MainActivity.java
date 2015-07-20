@@ -17,7 +17,10 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.HorizontalScrollView;
 import android.widget.TextView;
+
+import fsail.jp.otanews.App;
 import fsail.jp.otanews.R;
+import fsail.jp.otanews.api.ApiManager;
 import fsail.jp.otanews.api.DataManager;
 import fsail.jp.otanews.listener.PageChangeListener;
 import fsail.jp.otanews.fragment.ContentFragment;

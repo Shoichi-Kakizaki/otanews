@@ -16,7 +16,7 @@ public class AsyncContent {
     private ArrayList<String> mUri = new ArrayList<String>();
 
     // JSONArray用のコンストラクタ
-    public AsyncContent(boolean success, JSONArray response) {
+    public AsyncContent(boolean success, JSONObject response) {
         mSuccess = success;
         createStatus(response);
     }
@@ -34,12 +34,12 @@ public class AsyncContent {
     }
 
     // 必要なデータを生成する
-    private void createStatus(JSONArray response){
+    private void createStatus(JSONObject response){
         for (int i = 0; i < response.length(); i++) {
             try {
-                JSONObject qiita = (JSONObject) response.get(i);
-                mTitle.add(qiita.getString("title"));
-                mUri.add(qiita.getString("url"));
+                JSONObject content = (JSONObject) response.get(String.valueOf(i));
+                mTitle.add(content.getString("title"));
+                mUri.add(content.getString("url"));
             } catch (JSONException e) {
                 e.printStackTrace();
             }

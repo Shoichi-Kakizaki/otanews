@@ -29,7 +29,6 @@ public class App extends Application {
         return PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
     }
 
-
     /*バージョン情報*/
     public String getVersionName() {
         PackageManager pm = getPackageManager();
@@ -43,9 +42,5 @@ public class App extends Application {
         }
         return versionName;
     }
-
-
-
-
 
 }

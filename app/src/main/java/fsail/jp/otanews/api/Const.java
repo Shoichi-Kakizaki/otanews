@@ -19,6 +19,6 @@ public class Const {
 
     /*パラメータを作成する*/
     public static String parameter() {
-        return URL_DEVICE_STATUS + "app_id=" + APP_ID + "&idfa=" + DataManager.getInstance().getAdvertisingId() + "&uuid=" + DataManager.getInstance().getUuid() + "&version=" + App.getInstance().getVersionName();
+        return URL_DEVICE_STATUS + "&app_id=" + APP_ID + "&idfa=" + DataManager.getInstance().getAdvertisingId() + "&uuid=" + DataManager.getInstance().getUuid() + "&version=" + App.getInstance().getVersionName();
     }
 }

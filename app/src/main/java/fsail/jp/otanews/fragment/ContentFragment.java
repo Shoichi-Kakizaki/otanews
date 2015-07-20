@@ -52,8 +52,10 @@ public class ContentFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        CommunicationManager qiita = new CommunicationManager();
-        qiita.getQiita(mainActivity);
+
+        // コンテンツ(本文記事)を取得する
+        CommunicationManager content = new CommunicationManager();
+        content.getContent(mainActivity, "life");
         Log.d("通信いくよ", "びびびびび");
     }
 
